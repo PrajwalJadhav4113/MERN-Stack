@@ -1,0 +1,23 @@
+1) npm i --global nodemon    = This command for download nodemon 
+  globally so you can access it in alll in your project
+- It is use for atomatic starting server on every chang
+- and use it= npx nodemon (path name)
+
+2) req.parms  is a object  
+
+*3) slug is a variable means what we write on searchbar in slug its 
+will write in screen if we show on screen
+
+4) What is params 
+=> its they give after / data if you create slug then they show that data
+
+5)What is query?
+=>comes after ? (Quetion mark)
+
+6)We also serve static file but not directly we want to create 
+public folder and on main file write syntax like
+
+app.use (express.static('public'))
+
+so we can access files from that folder if we want multiple 
+file access so write same and change file name
