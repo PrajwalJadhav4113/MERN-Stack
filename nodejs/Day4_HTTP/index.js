@@ -28,7 +28,7 @@
 //     console.log("Server Started !!");
 // });
 
-//---------------------------------------------------------
+//---------------------------Routing on PAges------------------------------
 
 // const http=require("http");
 // const fs=require("fs");
@@ -57,25 +57,61 @@
 //     console.log("Server Started !!");
 // });
 
-//------------------------------------------------------
+//--------------------------URL-------------------------
+
+// const http=require("http");
+// const fs=require("fs");
+// const url=require("url");
+
+// const myServer = http.createServer((req,res)=>{
+//     const log = `${Date.now()}:${req.url} New request recived\n`
+
+    
+//     const myUrl = url.parse(req.url);
+//     console.log(myUrl); 
+
+//     switch(req.url){
+//         case "/":
+//             res.end("Home PAge")
+//         break;
+//         case "/about":
+//             res.end("I am Prajwal");
+//             break;
+//             default:
+//                 res.end("404 Not found")
+            
+        
+//     }
+//     fs.appendFile("log.txt", log,(err,data)=>{
+//         res.end("Hello from Server Again");  // here is what we ant to dend on that port
+
+//     })
+// });
+
+// myServer.listen(8001 , ()=>{
+//     console.log("Server Started !!");
+// });
+
+//------------What you write on that search bar it write on page---------------------------------------
 
 const http=require("http");
 const fs=require("fs");
 const url=require("url");
 
-const myServer = http.createServer((req,res)=>{
+const myServer2 = http.createServer((req,res)=>{
     const log = `${Date.now()}:${req.url} New request recived\n`
 
     
-    const myUrl = url.parse(req.url);
+    const myUrl = url.parse(req.url,true); // True for query parameter use
     console.log(myUrl); 
 
-    switch(req.url){
+    switch(myUrl.pathname){
         case "/":
             res.end("Home PAge")
         break;
         case "/about":
-            res.end("I am Prajwal");
+            const username=myUrl.query.Name //that name we want  to write on the search bar
+            res.end(`Hi ,  ${username}`);
             break;
             default:
                 res.end("404 Not found")
@@ -88,6 +124,6 @@ const myServer = http.createServer((req,res)=>{
     })
 });
 
-myServer.listen(8001 , ()=>{
+myServer2.listen(8002 , ()=>{
     console.log("Server Started !!");
 });
