@@ -1,0 +1,14 @@
+{
+  "name": "backend_cai-aur-code",
+  "version": "1.0.0",
+  "description": "a basic app to deploy",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "prajwal_jadhav",
+  "license": "ISC"
+}

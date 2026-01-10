@@ -1,0 +1,38 @@
+- URL = uniform resource locator
+
+-Headers are used for catching,authenticartion,manage state
+
+-Requet Headers => from client
+-Responce HEaders => from Server
+-Representation Headers=> encoding/compression
+-Payload Headers=> data
+
+*Most Comman Headers
+. Accept : application/json
+. User : Agent
+ . authenticartion
+ .Content- Type
+ .cookie
+ .CAtch-Control
+
+---------------------------------------------
+
+what createServer Do?
+-> arrow function are responsible for proccess incoming request 
+(req,res)=>{}  req=request and res for Responce.
+
+-myServer.listen(8000 , ()=>{
+    console.log("Server Started !!")
+});
+if server are started then only the call that next function
+-()=>{
+    console.log("Server Started !!")
+});  its for only ours so we know server are started
+
+-------------------------------------------------------
+
+npm i url 
+
+* they diffrentiate path pathname,query,search
+
+in program it write like 

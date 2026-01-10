@@ -1,0 +1,3 @@
+- Promise is a object 
+ -const response = await PromiseFive write in variable because promise are object 
+
