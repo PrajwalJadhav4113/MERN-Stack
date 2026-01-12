@@ -107,11 +107,11 @@ const myServer2 = http.createServer((req,res)=>{
 
     switch(myUrl.pathname){
         case "/":
-            res.end("Home PAge")
+            res.end("Homme Page")
         break;
         case "/about":
             const username=myUrl.query.Name //that name we want  to write on the search bar
-            res.end(`Hi ,  ${username}`);
+            res.end(`hallo ,  ${username}`);
             break;
             default:
                 res.end("404 Not found")

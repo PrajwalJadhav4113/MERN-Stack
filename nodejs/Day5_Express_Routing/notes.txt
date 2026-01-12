@@ -21,3 +21,148 @@ app.use (express.static('public'))
 
 so we can access files from that folder if we want multiple 
 file access so write same and change file name
+
+
+ =====Request=====
+ 1)Get =
+ Gets data from server
+
+Used to load pages or fetch data
+
+Data is sent in URL
+
+Safe & read-only
+
+Can be bookmarked & cached
+
+2)Post = 
+Give data to server
+
+========================= Rotes===============
+
+
+Express Routing – Simple Notes
+✅ What I did
+
+Created main.js
+
+Created routes/blog.js
+
+Used:
+
+app.use('/blog', blog)
+
+
+Also wrote:
+
+app.get('/blog')
+
+❌ What happened
+
+When I opened /blog
+
+Router response showed
+
+app.get('/blog') did not run
+
+🤔 Why it happened
+
+app.use('/blog') runs first
+
+Express checks routes top to bottom
+
+Router / = /blog
+
+First match sends response and stops
+
+⭐ Rule to remember
+
+First matching route always runs in Express
+
+✅ Correct way
+
+Write /blog route only once
+
+Keep all blog routes in routes/blog.js
+
+********************Syntax**********************
+
+1)Create router :=
+
+const express = require("express");
+const router = express.Router();
+
+2)Define routes:=
+
+router.get("/", (req, res) => {
+  res.send("Blog home");
+});
+
+router.post("/", (req, res) => {
+  res.send("Create blog");
+});
+
+3)Export router:=
+
+module.exports = router;
+
+4)Use router in main file=>
+const blog =require('./routes/blog') // giving path
+
+app.use("/blog", router);
+
+app.use()
+
+Used to attach middleware or routes
+
+Runs for all HTTP methods (GET, POST, PUT, DELETE…)
+
+"/blog"
+
+This is the base path
+
+Any URL starting with /blog will match
+
+router
+
+This is an Express Router
+
+Contains blog-related routes
+
+🔹 How it works
+In routes/blog.js
+router.get("/", (req, res) => {
+  res.send("Blog home");
+});
+
+router.get("/about", (req, res) => {
+  res.send("Blog about");
+});
+
+In main.js
+app.use("/blog", router);
+
+🔹 Final URLs
+Router code	Actual URL
+router.get("/")	/blog
+router.get("/about")	/blog/about
+🧠 Execution Flow
+Request → /blog/about
+   ↓
+app.use("/blog", router)
+   ↓
+router.get("/about")
+   ↓
+Response sent
+
+⭐ One-line definition (for notes)
+
+app.use("/blog", router) mounts all blog routes under the /blog URL.
+
+If you want, I can also explain:
+
+app.use() vs app.get()
+
+Why router / becomes /blog
+
+Middleware flow in Express

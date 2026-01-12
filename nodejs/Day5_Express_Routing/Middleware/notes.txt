@@ -1,0 +1,63 @@
+middleeware use for all requests
+
+1️⃣ What is Middleware?
+
+Middleware is a function that runs between request and response.
+
+Request → Middleware → Route → Response
+
+2️⃣ Middleware Syntax
+(req, res, next) => {
+  // logic
+  next();
+}
+
+
+req → request data
+
+res → response
+
+next() → move to next middleware / route
+
+3️⃣ Why next() is important
+
+Without next() → request gets stuck
+
+Route will NOT run
+
+4️⃣ App-level Middleware
+
+Runs for all routes
+
+app.use((req, res, next) => {
+  console.log(req.method);
+  next();
+});
+
+5️⃣ Router-level Middleware
+
+Runs only for specific routes
+
+router.use((req, res, next) => {
+  console.log("Blog middleware");
+  next();
+});
+
+
+Used when:
+
+app.use("/blog", router);
+
+6️⃣ Middleware runs BEFORE routes
+router.use(...)
+router.get("/")
+
+
+✔ middleware runs first
+✔ then route executes
+
+7️⃣ Real Example (your style)
+router.use((req, res, next) => {
+  console.log(new Date().toLocaleString(), req.method);
+  next();
+});
