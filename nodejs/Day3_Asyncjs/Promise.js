@@ -59,7 +59,7 @@ console.log(user);
 return user.username
 })
 .then((username)=>{
-    console.log(username)
+    console.log("USername is " +username)
 })
 .catch((error)=>{
 console.log(error)
@@ -122,3 +122,5 @@ return response.json()
 .finally(()=>{
     console.log("WE are fetch data from url")
 })
+
+

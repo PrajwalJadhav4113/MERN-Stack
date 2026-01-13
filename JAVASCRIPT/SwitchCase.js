@@ -18,3 +18,4 @@ switch(option) {
 
     default : console.log('Invalid Option')
 }
+

@@ -1,10 +1,12 @@
 const express = require('express') // here import express
 const blog =require('./routes/blog')  // here we want to write our routes path
+const contact =require('./routes/contact')  // here we want to write our routes path
 const app = express()  // defined app
 const port = 3000   // port
 
 app.use(express.static('public'))
 app.use('/blog',blog)
+app.use('/contact',contact)
 
 app.get('/', (req, res) => {
   res.send('Hey its my get request!')
