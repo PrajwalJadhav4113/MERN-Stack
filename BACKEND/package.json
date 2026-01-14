@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.1.3",
+    "node-fetch": "^3.3.2",
+    "url": "^0.11.4"
+  },
+  "name": "sarvify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrajwalJadhav4113/Sarvify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrajwalJadhav4113/Sarvify/issues"
+  },
+  "homepage": "https://github.com/PrajwalJadhav4113/Sarvify#readme",
+  "description": ""
+}
